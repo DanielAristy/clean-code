@@ -20,6 +20,11 @@
             yellow: ['piña','banana']
         }
 
+        if (!Object.keys(fruitsByColor).includes(color)) {
+            throw Error('The color must be: red, yellow, purple');
+        }
+            
+
         return fruitsByColor[color];
 
     }
@@ -35,7 +40,8 @@
         if ( !isFirstStepWorking ) return 'First step broken.';
         if ( !isSecondStepWorking ) return 'Second step broken.'
         if ( !isThirdStepWorking  ) return 'Third step broken.';
-        return ( isFourthStepWorking ) ? 'Working properly!' : 'Fourth step broken.';
+        if ( !isFourthStepWorking ) return 'Fourth step broken.'
+        return 'Working properly!';
     }
 
 
